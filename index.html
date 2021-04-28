@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- ФАВИКОН --><!-- https://habr.com/ru/post/522844/ -->
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon/favicon.ico">
     <link type="image/png" sizes="16x16" rel="icon" href="img/favicon/favicon-16x16.png">
@@ -50,16 +50,21 @@
 
     <style>
         /* КО ВСЕМУ ДОКУМЕНТУ */
-        *{
+        *,
+        *:before,
+        *:after{
             margin: 0;
             padding: 0;
+            border: 0;
             box-sizing: border-box;
             font-family: sans-serif;
             /* border: 1px solid purple; */
         }
 
         /* К ВИДИМОЙ ЧАСТИ САЙТА - "BODY" */
+        html,
         body{
+            height: 100%;
             color: white;
             background-color: #343434;
         }
@@ -74,42 +79,72 @@
             color: white;
             text-decoration: none;
         }
+        .wrapper{}
 
-        /* HEADER */
-        header{   
+        .container{
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .header{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 50;
+        }
+        .header::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: teal;
+        }
+        .header_body{
+            position: relative;
+            /* поверх плашки */
+            z-index: 2;
             display: flex;
-            padding: 10px;
-            padding-bottom: 0;
-            background: black;
+            /* flex-элементы по сторонам */
+            justify-content: space-between;
+            height: 80px;
             align-items: center;
         }
+        .header_logo{
+            flex: 0 0 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .header_logo img{
+            max-width: 100%;
+            display: block;
+        }
+        .header_burger{}
+        .header_menu{}
+        .header_list{
+            display: flex;
+        }
+        .header_list li{
+            /* "li" без точек */
+            list-style: none;
+            margin: 0 0 0 20px;
+        }
+        .header_link{
+            color: white;
+            text-decoration: none;
+            /* верхний регистр */
+            text-transform: uppercase;
+        }
+        .content{
+            padding: 100px 0 0 0;
+        }
+        .content_text{}
 
-        .burger
-        {
-            justify-content: flex-end;
-        }
-        .header_item
-        {
-            display: inline-block;
-            padding: 10px;
-            background-color: #343434;
-            border: 1px solid white;
-            border-radius: 10px;
-            margin: 0 0 10px 10px;
-        }
-        .header_item:hover{
-            background-color: #565656;
-        }
 
 
-        /* ЛОГОТИП */
-        .logo
-        {
-            display: inline-block;
-            height: 60px;
-            padding: 0;
-            margin: 0;
-        }
 
         /* ЕСЛИ УСТРОЙСТВО ПОРТРЕТНОГО ТИПА, ТО: */
         @media screen and (orientation: portrait)
@@ -182,74 +217,112 @@
 
 </head>
 <body>
-    <header>
-        <!-- ЛОГОТИП -->
-        <a class="logo" href="index.html">
-            <img style="height:100%;" src="img/logo.jpg" alt="здесь был логотип :(">
-        </a>
-        
-        <!--  -->
-        <div style="display: flex;">
-            <div class="burger">
-                <a href="index.html">
-                    <div class="header_item">Главная</div>
-                </a>
-                <a href="#">
-                    <div class="header_item">Технологии</div>
-                </a>
-                <a href="#">
-                    <div class="header_item">Новости</div>
-                </a>
-                <a href="#">
-                    <div class="header_item">Продукция</div>
-                </a>
-                <a href="#">
-                    <div class="header_item">Услуги</div>
-                </a>
-                <a href="#">
-                    <div class="header_item">Контакты</div>
-                </a>
+    <div class="wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <!-- ограничение ширины "HEADER" -->
+            <div class="container">
+                <div class="header_body">
+                    <!-- ЛОГОТИП -->
+                    <a class="header_logo" href="index.html">
+                        <img src="img/logo.jpg" alt="здесь был логотип :(">
+                    </a>
+                    <!-- БУРГЕР -->
+                    <div class="header_burger">
+                        <span></span>
+                    </div>
+                    <nav class="header_menu">
+                        <ul class="header_list">
+                            <li>
+                                <a href="" class="header_link">Главная</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Технологии</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Новости</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Продукция</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Услуги</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+                
+                <!-- <div style="display: flex;">
+                    <div class="burger">
+                        <a href="index.html">
+                            <div class="header_item">Главная</div>
+                        </a>
+                        <a href="#">
+                            <div class="header_item">Технологии</div>
+                        </a>
+                        <a href="#">
+                            <div class="header_item">Новости</div>
+                        </a>
+                        <a href="#">
+                            <div class="header_item">Продукция</div>
+                        </a>
+                        <a href="#">
+                            <div class="header_item">Услуги</div>
+                        </a>
+                        <a href="#">
+                            <div class="header_item">Контакты</div>
+                        </a>
+                    </div>
+                </div>
+            </header> -->
+        <div class="content">
+            <div class="container">
+                <div class="o_nas">
+                    <p>000 «НИЦ ТЛ ЛТД» образовано 20 июня 2003 года. Основные направления деятельности предприятия - изготовление металлоконструкций любой сложности, лазерная резка металла, гибка и порошковая окраска изделий.</p>
+                    <p>Мы работаем как с постоянными клиентами, так и с клиентами, оформляющими разовые заказы.</p>
+                    <p>Постоянным заказчикам предоставляем выгодные условия для дальнейшего сотрудничества.</p>
+                    <p>Внедрение современного оборудования и техники, использование материалов проверенного качества, а также работа высококвалифицированных специалистов позволяют нам добиваться высоких результатов на всем цикле производства.</p>
+                    <p>Мы рады Вашим заказам и стремимся выполнить их качественно и в короткие сроки!</p>
+                </div>
             </div>
         </div>
-    </header>
 
-    <div class="o_nas">
-        <p>000 «НИЦ ТЛ ЛТД» образовано 20 июня 2003 года. Основные направления деятельности предприятия - изготовление металлоконструкций любой сложности, лазерная резка металла, гибка и порошковая окраска изделий.</p>
-        <p>Мы работаем как с постоянными клиентами, так и с клиентами, оформляющими разовые заказы.</p>
-        <p>Постоянным заказчикам предоставляем выгодные условия для дальнейшего сотрудничества.</p>
-        <p>Внедрение современного оборудования и техники, использование материалов проверенного качества, а также работа высококвалифицированных специалистов позволяют нам добиваться высоких результатов на всем цикле производства.</p>
-        <p>Мы рады Вашим заказам и стремимся выполнить их качественно и в короткие сроки!</p>
-    </div>
 
-    <!-- google map -->
-    <!-- https://youtu.be/LKgDqdJP7BI -->
-    <div class="map_box">
-        <div class="stabilitron">
-            <div class="">Как нас найти? Всё просто</div>
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%9E%D0%9E+%D0%9D%D0%9F%D0%9E+%22%D0%9B%D0%B0%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80%22/@55.5989437,39.45547,11.75z/data=!4m5!3m4!1s0x0:0x4c71dfcaad3af86c!8m2!3d55.5994813!4d39.5240478?hl=ru">
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36073.352319303165!2d39.509692558280314!3d55.59184014424788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414badebdc1b67d5%3A0x4c71dfcaad3af86c!2z0J7QntCeINCd0J_QniAi0JvQsNC30LXRgNC90YvQuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YbQtdC90YLRgCI!5e0!3m2!1sru!2sru!4v1619534171477!5m2!1sru!2sru" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </a>
+            <!-- google map -->
+            <!-- https://youtu.be/LKgDqdJP7BI -->
+            <div class="map_box">
+                <div class="stabilitron">
+                    <div class="">Как нас найти? Всё просто</div>
+                    <a href="https://www.google.com/maps/place/%D0%9E%D0%9E%D0%9E+%D0%9D%D0%9F%D0%9E+%22%D0%9B%D0%B0%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80%22/@55.5989437,39.45547,11.75z/data=!4m5!3m4!1s0x0:0x4c71dfcaad3af86c!8m2!3d55.5994813!4d39.5240478?hl=ru">
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36073.352319303165!2d39.509692558280314!3d55.59184014424788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414badebdc1b67d5%3A0x4c71dfcaad3af86c!2z0J7QntCeINCd0J_QniAi0JvQsNC30LXRgNC90YvQuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YbQtdC90YLRgCI!5e0!3m2!1sru!2sru!4v1619534171477!5m2!1sru!2sru" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </a>
+                </div>
+            </div>
+            <!-- https://yandex.ru/search/?clid=2186621&text=ssl%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&lr=10727&redircnt=1619534495.1 -->    
+
+        <!-- КОНТАКТЫ -->
+        <div class="bottom_header">
+
+            <h3>Контакты:</h3>
+
+            <!-- НОМЕРА ТЕЛЕФОНОВ -->
+            <div class=phone>
+                <a href="tel:+74964525908">Тел1: +7(496)452-59-08</a>
+            </div>
+            <div class=phone>
+                <a href="tel:+74964523838">Тел2: +7(496)452-38-38</a>
+            </div>
+            <div class=phone>
+                <a href="tel:+74964524588">Факс: +7(495)123-45-67</a>
+            </div>
+
         </div>
-    </div>
-    <!-- https://yandex.ru/search/?clid=2186621&text=ssl%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&lr=10727&redircnt=1619534495.1 -->
-    
-
-    <!-- КОНТАКТЫ -->
-    <div class="bottom_header">
-
-        <h3>Контакты:</h3>
-
-        <!-- НОМЕРА ТЕЛЕФОНОВ -->
-        <div class=phone>
-            <a href="tel:+74964525908">Тел1: +7(496)452-59-08</a>
-        </div>
-        <div class=phone>
-            <a href="tel:+74964523838">Тел2: +7(496)452-38-38</a>
-        </div>
-        <div class=phone>
-            <a href="tel:+74964524588">Факс: +7(495)123-45-67</a>
-        </div>
-
     </div>
 
     <script>
