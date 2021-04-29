@@ -102,11 +102,12 @@
             width: 100%;
             height: 100%;
             background-color: teal;
+            z-index: 2;
         }
         .header_body{
             position: relative;
             /* поверх плашки */
-            z-index: 2;
+
             display: flex;
             /* flex-элементы по сторонам */
             justify-content: space-between;
@@ -115,41 +116,24 @@
         }
         .header_logo{
             flex: 0 0 60px;
-            border-radius: 50%;
+/*            border-radius: 50%;*/
             overflow: hidden;
+            position: relative;
+            z-index: 3;
         }
         .header_logo img{
             max-width: 100%;
-            display: block;
+            display: block;    /* Это лекарство от этого: у картинки в круглом блоке обрезается низ */
         }
         .header_burger{
             display: none;
         }
         .header_menu{}
-        @media (max-width:767px){
-            body{
-                background-color: cornflowerblue;
-            }
-            .header_burger{
-                display: block;
-                position: relative;
-                width: 30px;
-                height: 20px;
-                background-color: red;
-            }
-            .header_burger:before,
-            .header_burger::after{
-                content: '';
-                background-color: white;
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                left: 0;
-            }
-        }
-
+        
         .header_list{
             display: flex;
+            position: relative;
+            z-index: 2;
         }
         .header_list li{
             /* "li" без точек */
@@ -162,10 +146,84 @@
             /* верхний регистр */
             text-transform: uppercase;
         }
+
         .content{
             padding: 100px 0 0 0;
         }
         .content_text{}
+
+        @media (max-width:767px){
+            body{
+                background-color: cornflowerblue;
+            }
+            .header_body{
+                height: 50px;
+                
+            }
+            .header_logo{
+                flex: 0 0 40px;
+            }
+            .header_burger{
+                display: block;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                position: relative;
+                z-index: 3;
+            }
+            .header_burger span{
+                position: absolute;
+                background-color: white;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                top: 9px;
+                transition: all 0.3s ease 0s;
+            }
+            .header_burger:before,
+            .header_burger::after{
+                content: '';
+                background-color: white;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                transition: all 0.3s ease 0s;
+            }
+            .header_burger:before{
+                top: 0;
+            }
+            .header_burger:after{
+                bottom: 0;
+            }
+            .header_burger:active span{
+                transform: scale(0);
+            }
+            .header_burger:active:before{
+                transform: rotate(45deg);
+                top: 9px;
+            }
+            .header_burger:active:after{
+                transform: rotate(-45deg);
+                bottom: 9px;
+            }
+            .header_menu{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: cornflowerblue;
+                padding: 70px 10px 20px 10px;
+            }
+            .header_list{
+                display: block;
+            }
+            .header_list li{
+                margin: 0 0 20px 0;
+            }
+        }
+
 
 
 
@@ -331,9 +389,13 @@
         </div>
     </div>
 
+    <script href='https://code.jquery.com/jquery-3.6.0.min.js'></script>
     <script>
-    
+    $(document).ready(function(){
+       $('.header_burger').click(function(event){
+           $('.header_burger,.header_menu').toggleClass('active');
+       });
+    });
     </script>
-
 </body>
 </html>
