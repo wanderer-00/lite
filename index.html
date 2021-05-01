@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--  Заполнить googleMap  -->
-<!--  Телефон в googleMap  -->
-<!--  Фото  -->
-<!--  Метрика  -->
-<!--  Тексты интересующие посетителя  -->
-    
+    <!--  Заполнить googleMap  -->
+    <!--  Телефон в googleMap  -->
+    <!--  Фото  -->
+    <!--  Метрика  -->
+    <!--  Тексты интересующие посетителя  -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ФАВИКОН --><!-- https://habr.com/ru/post/522844/ -->
+    <!-- ФАВИКОН -->
+    <!-- https://habr.com/ru/post/522844/ -->
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon/favicon.ico">
     <link type="image/png" sizes="16x16" rel="icon" href="img/favicon/favicon-16x16.png">
     <link type="image/png" sizes="32x32" rel="icon" href="img/favicon/favicon-32x32.png">
@@ -51,366 +53,16 @@
     <!-- Для проверки фавиконов на различных платформах https://realfavicongenerator.net/ -->
 
 
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Главная страница</title>
 
     <style>
-        /* КО ВСЕМУ ДОКУМЕНТУ */
-        *,
-        *:before,
-        *:after{
-            margin: 0;
-            padding: 0;
-            border: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-            /* border: 1px solid purple; */
-        }
-
-        /* К ВИДИМОЙ ЧАСТИ САЙТА - "BODY" */
-        html,
-        body{
-            height: 100%;
-            color: white;
-            background-color: white;
-        }
-
-        /* scroll bar */
-        ::-webkit-scrollbar {width: 8px}
-        ::-webkit-scrollbar-track {background: #18191d}
-        ::-webkit-scrollbar-thumb {background: #3b4146}
-        ::-webkit-scrollbar-thumb:hover {background: #474e54}
-
-        a{
-            color: white;
-            text-decoration: none;
-        }
-        p{
-            padding: 0;
-            margin: 0;
-        }
-        
-        /* ОБНУЛЕНИЕ СТИЛЕЙ */
-        input, input:after, input:before {
-            padding: 0;
-            margin: 0;
-            border: 0;
-            border: none;
-        }
-        .wrapper{
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .container{
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 10px;
-        }
-
-        .header{
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 50;
-        }
-        .header::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            z-index: 2;
-        }
-        .header_body{
-            position: relative;
-            /* поверх плашки */
-
-            display: flex;
-            /* flex-элементы по сторонам */
-            justify-content: space-between;
-            height: 80px;
-            align-items: center;
-        }
-        .header_logo{
-            flex: 0 0 60px;
-/*            border-radius: 50%;*/
-            overflow: hidden;
-            /* z-index */
-            position: relative;
-            z-index: 3;
-        }
-        .header_logo img{
-            max-width: 100%;
-            display: block;    /* Это лекарство от этого: у картинки в круглом блоке обрезается низ */
-        }
-        .header_burger{
-            display: none;
-        }
-        .header_menu{}
-        
-        .header_list{
-            display: flex;
-            position: relative;
-            z-index: 2;
-        }
-        .header_list li{
-            /* "li" без точек */
-            list-style: none;
-            margin: 0 0 0 6px;
-        }
-        .header_link{
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            /* верхний регистр */
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            padding: 10px;
-        }
-        .header_link:hover{
-            color: lightseagreen;
-            border: 2px solid lightseagreen;
-        }
-        .content{
-            padding: 100px 0 0 0;
-        }
-        .content_text{}
-        
-        /* При ширине экрана = 767px: */
-        @media (max-width:767px){
-            body.lock{
-                overflow: hidden;
-            }
-            .header_body{
-                height: 50px;
-                
-            }
-            .header_logo{
-                flex: 0 0 40px;
-            }
-            .header_burger{
-                display: block;
-                position: relative;
-                width: 30px;
-                height: 20px;
-                position: relative;
-                z-index: 3;
-            }
-            .header_burger span{
-                position: absolute;
-                background-color: white;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                top: 9px;
-                transition: all 0.3s ease 0s;
-            }
-            .header_burger:before,
-            .header_burger::after{
-                content: '';
-                background-color: white;
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                left: 0;
-                transition: all 0.3s ease 0s;
-            }
-            .header_burger:before{
-                top: 0;
-            }
-            .header_burger:after{
-                bottom: 0;
-            }
-            .header_burger.active span{
-                transform: scale(0);
-            }
-            .header_burger.active:before{
-                transform: rotate(45deg);
-                top: 9px;
-            }
-            .header_burger.active:after{
-                transform: rotate(-45deg);
-                bottom: 9px;
-            }
-            .header_menu{
-                position: fixed;
-                top: -100%;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: black;
-                padding: 70px 10px 20px 10px;
-                transition: all 0.3s ease 0s;
-                overflow: auto;
-                font-size: 28px;
-            }
-            .header_menu.active{
-                top: 0;
-                transition: all 0.3s ease 0s;
-            }
-            .header_list{
-                display: block;
-            }
-            .header_list li{
-                margin: 0 0 20px 0;
-            }
-            .map{
-                width: 100%;
-                height: 320px;
-            }
-            .stabilitron{
-                width: 98%;
-            }
-            .header_link{
-                border: none;
-            }
-            .header_link:hover{
-                border: none;
-            }
-            
-
-        }
-
-        @media screen and (orientation: portrait) {
-            .s{
-                grid-template-columns: 1fr;
-                background: white;
-            }   
-        }
-
-
-        .box_img{
-            margin: 50px 0 0 0;
-            width: 100%;
-        }
-        .box_img img{
-        }
-        .box_img div{
-            position: absolute;
-            top: 140px;
-            left: 50px;
-            max-width: 440px;
-            padding: 20px;
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 6px;
-        }
-        .box_img h1{
-            text-transform: uppercase;
-        }
-
-        /* КЛЕВЕР */
-        .box_four {
-            padding: 40px 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            
-        }
-        .s{
-            width: 80%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            
-        }
-        .quality{
-/*            border: 2px solid blue;*/
-            display: flex;
-            margin: 20px;
-        }
-        .quality_ico {
-            width: 100px;
-            margin-right: 10px;
-        }
-        .quality_ico img {width: 100%;}
-        .quality_text{
-            color: black;
-            width: 100%;
-        }
-        .quality_text font{
-            display: block;
-            color: teal;
-            font-size: 26px;
-            font-weight: 500;
-        }
-        
-        
-        .request_and_map{
-            color: white;
-            font-size: 32px;
-            width: 100%;
-            padding: 20px;
-            background-color: black;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-        }
-        /* ЗАЯВКА */
-        .request{
-            padding: 0 20px;
-            flex-basis: 30%;
-            background: black;
-        }
-        /* ПОЛЯ ЗАЯВКИ */
-        .request input,
-                 textarea{
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            border: 2px solid black;
-        }
-
-        /* MAP */
-        .map_box
-        {
-            flex-basis: 70%;
-        }
-        .map{
-            height: 400px;
-            width: 100%;
-            margin: 10px 0;
-        }
-
-
-        /* О НАС */
-        .o_nas
-        {   
-            margin: 6x;
-            padding: 10px;
-            border-radius: 8px;
-            background: black;
-            border: 1px solid white;
-        }
-
-
-        /* BOTTOM */
-        .bottom_header{   
-            margin-top: 20px;
-            background-color: black;
-            padding: 20px;
-        }
-        .bottom_header h3{
-            padding-bottom: 18px;
-        }
-        .phone{
-            padding-bottom: 5px;
-        }
-        .copy,
-        .copy a{
-            color: darkgray;
-            font-size: 10px;
-            padding-top: 10px;
-        }
 
         /* СДЕЛАЙ АДАПТИВ ПОД РАЗНЫЕ БРАУЗЕРЫ */
     </style>
 
 </head>
+
 <body>
     <div class="wrapper">
         <!-- HEADER -->
@@ -459,55 +111,55 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, quasi, repellat. At excepturi, saepe quis odio ullam vel. Eligendi ut cumque aliquam consequuntur itaque, nostrum tempora expedita voluptas sequi similique.</p>
             </div>
         </div>
-        
-        
+
+
         <div class="box_four">
             <div class="s">
 
-                    <div class="quality">
-                        <div class="quality_ico">
-                            <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
-                        </div>
-                        <div class="quality_text">
-                            <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
-                        </div>
+                <div class="quality">
+                    <div class="quality_ico">
+                        <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
                     </div>
-
-                    <div class="quality">
-                        <div class="quality_ico">
-                            <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
-                        </div>
-                        <div class="quality_text">
-                            <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
-                        </div>
+                    <div class="quality_text">
+                        <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
                     </div>
+                </div>
 
-
-                    <div class="quality">
-                        <div class="quality_ico">
-                            <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
-                        </div>
-                        <div class="quality_text">
-                            <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
-                        </div>
+                <div class="quality">
+                    <div class="quality_ico">
+                        <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
                     </div>
-
-                    <div class="quality">
-                        <div class="quality_ico">
-                            <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
-                        </div>
-                        <div class="quality_text">
-                            <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
-                        </div>
+                    <div class="quality_text">
+                        <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
                     </div>
+                </div>
+
+
+                <div class="quality">
+                    <div class="quality_ico">
+                        <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
+                    </div>
+                    <div class="quality_text">
+                        <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
+                    </div>
+                </div>
+
+                <div class="quality">
+                    <div class="quality_ico">
+                        <img src="img/massege.jpg" alt="Нет картинки? печаль ;(">
+                    </div>
+                    <div class="quality_text">
+                        <font>Drifjr irfrkf orkflrkf olfkrlfk</font>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iste beatae sequi vitae at, laborum tenetur ullam necessitatibus! Adipisci doloremque tempore, deleniti assumenda sunt perferendis voluptate nemo pariatur quae nisi!</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-<!--
+        <!--
         <div class="content">
             <div class="container">
                 <div class="o_nas">
@@ -526,15 +178,7 @@
             <div class="request">
                 <font class=''>Сделайте заказ:</font>
                 <input class='email' type='email' value='' maxlength='250' pattern='^.+@.+\.[a-zA-Z]{2,63}$' tabindex='1' placeholder='Укажите свою почту...'>
-                <textarea     class=''
-                              type='email' 
-                              placeholder='Опишите заказ...'
-                              accesskey='s'
-                              rows='6'
-                              required
-                              tabindex='2'
-                              cols='50'
-                ></textarea>
+                <textarea class='' type='email' placeholder='Опишите заказ...' accesskey='s' rows='6' required tabindex='2' cols='50'></textarea>
             </div>
             <!-- google map -->
             <!-- https://youtu.be/LKgDqdJP7BI -->
@@ -542,10 +186,10 @@
                 <font>Как нас найти? Всё просто</font>
                 <iframe class='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54040.64002793143!2d39.449936333748404!3d55.59787957464154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414badc32dfb4295%3A0x6ed3d43d6f945f53!2z0J3QmNCmINCi0Jsg0JvQotCU!5e0!3m2!1sru!2sru!4v1619866786270!5m2!1sru!2sru" width="800px" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <!-- https://yandex.ru/search/?clid=2186621&text=ssl%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&lr=10727&redircnt=1619534495.1 -->    
+            <!-- https://yandex.ru/search/?clid=2186621&text=ssl%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&lr=10727&redircnt=1619534495.1 -->
         </div>
-        
-        
+
+
         <!-- КОНТАКТЫ -->
         <div class="bottom_header">
 
@@ -564,16 +208,15 @@
             <div class="copy"><a href='https://nris.ru/blog/chto-oznachaet-znak-kopirajta/'>&#169;</a> 2021 Официальный сайт компании «НИЦ ТЛ ЛТД»</div>
         </div>
     </div>
-    
+
 
     <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
     <script>
-    $(document).ready(function(){
-       $('.header_burger').click(function(event){
-           $('.header_burger,.header_menu').toggleClass('active');
-           $('body').toggleClass('lock');
-       });
-    });
+        $(document).ready(function() {
+            $('.header_burger').click(function(event) {
+                $('.header_burger,.header_menu').toggleClass('active');
+                $('body').toggleClass('lock');
+            });
+        });
     </script>
-</body>
-</html>
+</body></html>
