@@ -4,13 +4,16 @@
     <!--  Заполнить googleMap  -->
     <!--  Телефон в googleMap  -->
     <!--  Фото  -->
-    <!--  Метрика  -->
+    <!--  Метрика (cсчётчик посещений)  -->
     <!--  Тексты интересующие посетителя  -->
+    <!--  СДЕЛАЙ АДАПТИВ ПОД РАЗНЫЕ БРАУЗЕРЫ -->
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Главная страница</title>
+
 
     <!-- ФАВИКОН -->
     <!-- https://habr.com/ru/post/522844/ -->
@@ -51,16 +54,6 @@
     <!-- С помощью последней строки кода «theme-color» можно закрасить адресную строку и строку уведомлений в любой цвет. В значении content задается цвет. -->
     <meta name="theme-color" content="#ffffff">
     <!-- Для проверки фавиконов на различных платформах https://realfavicongenerator.net/ -->
-
-
-    <link rel="stylesheet" href="CSS/style.css">
-    <title>Главная страница</title>
-
-    <style>
-
-        /* СДЕЛАЙ АДАПТИВ ПОД РАЗНЫЕ БРАУЗЕРЫ */
-    </style>
-
 </head>
 
 <body>
@@ -178,7 +171,8 @@
             <div class="request">
                 <font class=''>Сделайте заказ:</font>
                 <input class='email' type='email' value='' maxlength='250' pattern='^.+@.+\.[a-zA-Z]{2,63}$' tabindex='1' placeholder='Укажите свою почту...'>
-                <textarea class='' type='email' placeholder='Опишите заказ...' accesskey='s' rows='6' required tabindex='2' cols='50'></textarea>
+                <textarea class='' type='email' placeholder='Опишите заказ...' accesskey='s' rows='10' required tabindex='2' cols='50'></textarea>
+                <input type='button' class='button' value='ОТПРАВИТЬ' >
             </div>
             <!-- google map -->
             <!-- https://youtu.be/LKgDqdJP7BI -->
