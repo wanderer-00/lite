@@ -66,6 +66,7 @@ textarea {
 .wrapper {
     max-width: 100%;
     overflow: hidden;
+    min-height: 100%;
 }
 
 .container {
@@ -272,15 +273,17 @@ textarea {
         width: 100% !important;
     }
     .box_img {
+        margin-top: 30px !important;
         width: 100% !important;
     }
     .box_img img {
         width: 200% !important;
     }
     .box_img div{
-        top: 50px !important;
+        top: 0px !important;
         left: 0px !important;
         max-width: 100% !important;
+        height: 100%;
         border-radius: 0 !important;
     }
     .request_and_map{
@@ -316,7 +319,8 @@ textarea {
 
 
 .box_img {
-    margin: 50px 0 0 0;
+    position: relative;
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -429,8 +433,6 @@ textarea {
 
 /* BOTTOM */
 .basement {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr; */
     background-color: black;
     padding: 20px;
 }
@@ -475,3 +477,13 @@ textarea {
     background: #1ECD97;
 }
 
+
+/* SLIDER SERVICES */
+.services_box{
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+}
+.services_box h2{
+    padding: 0 0 20px 0;
+}

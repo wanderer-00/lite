@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="CSS/style.css">
     <title>НИЦ ТЛ ЛТД | Главная страница</title>
 
+    <!-- ПОДКЛЮЧЕНИЕ JQUERY -->
+    <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
+    <script src='JS/script.js'></script>
+
+    <!-- SLICK SLIDER --><!-- source: https://www.youtube.com/watch?v=rXNfDfqtM3M -->>
+    <script src='JS/slick.min.js'></script>
+    <link rel="stylesheet" href="CSS/slick_slider.css">
 
     <!-- ФАВИКОН -->
     <!-- https://habr.com/ru/post/522844/ -->
@@ -167,6 +174,22 @@
 -->
 
 
+        <!-- SLICK SLIDER -->
+        <div class="services_box">
+            <h2>Алюминивая сварка</h2>
+            <div class="slider">
+                <div class="slider_item">
+                    <img src="img/services/1.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="slider_item">
+                    <img src="img/services/2.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="slider_item">
+                    <img src="img/services/3.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+            </div>
+        </div>
+
         <div class="request_and_map">
             <div class="request">
                 <font class=''>Сделайте заказ:</font>
@@ -182,41 +205,31 @@
             </div>
             <!-- https://yandex.ru/search/?clid=2186621&text=ssl%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&lr=10727&redircnt=1619534495.1 -->
         </div>
-
-
-        <!-- ПОДВАЛ -->
-        <div class="basement">
-
-            <div class="basement_line">
-                <div class="basement_item">
-                    <h3>Контакты:</h3>
-                    <!-- НОМЕРА ТЕЛЕФОНОВ -->
-                    <div class=phone><a href="tel:+74964525908">Тел1: +7(496)452-59-08</a></div>
-                    <div class=phone><a href="tel:+74964523838">Тел2: +7(496)452-38-38</a></div>
-                    <div class=phone><a href="tel:+74964524588">Факс: +7(495)123-45-67</a></div>
-                </div>
-
-                <div class="basement_item">
-                    <h3>Местоположение:</h3>
-                    <div class=phone>Адрес: <a href="https://goo.gl/maps/tNKv8LKDnGxfYYYR7">Московская область, Шатурский район, г. Шатура, ул. Святоозёрская, дом 1</a></div>
-                    <div class=phone>Индекс: <a href="#"></a>140700</div>
-                </div>
-
-            </div>
-
-            <div class="copy"><a href='https://nris.ru/blog/chto-oznachaet-znak-kopirajta/'>&#169;</a> 2021 Официальный сайт компании «НИЦ ТЛ ЛТД»</div>
-
-        </div>
     </div>
 
 
-    <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
-    <script>
-        $(document).ready(function() {
-            $('.header_burger').click(function(event) {
-                $('.header_burger,.header_menu').toggleClass('active');
-                $('body').toggleClass('lock');
-            });
-        });
-    </script>
+    <!-- ПОДВАЛ -->
+    <footer class="basement">
+
+        <div class="basement_line">
+            <div class="basement_item">
+                <h3>Контакты:</h3>
+                <!-- НОМЕРА ТЕЛЕФОНОВ -->
+                <div class=phone><a href="tel:+74964525908">Тел1: +7(496)452-59-08</a></div>
+                <div class=phone><a href="tel:+74964523838">Тел2: +7(496)452-38-38</a></div>
+                <div class=phone><a href="tel:+74964524588">Факс: +7(495)123-45-67</a></div>
+            </div>
+
+            <div class="basement_item">
+                <h3>Местоположение:</h3>
+                <div class=phone>Адрес: <a href="https://goo.gl/maps/tNKv8LKDnGxfYYYR7">Московская область, Шатурский район, г. Шатура, ул. Святоозёрская, дом 1</a></div>
+                <div class=phone>Индекс: <a href="#"></a>140700</div>
+            </div>
+
+        </div>
+
+        <div class="copy"><a href='https://nris.ru/blog/chto-oznachaet-znak-kopirajta/'>&#169;</a> 2021 Официальный сайт компании «НИЦ ТЛ ЛТД»</div>
+
+    </footer>
+
 </body></html>
