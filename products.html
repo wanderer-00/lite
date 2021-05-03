@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" sizes="96x96" rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Продукция</title>
+
+    <style>
+    .cluster{
+        margin-top: 80px;
+        min-width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+
+        /* background-color: pink; */
+    }
+    .product{
+        overflow: hidden;
+        position: relative;
+        /* SPACE */
+        margin: 20px;
+        padding: 10px;
+        /* SIZE */
+        width: 200px;
+
+        background-color: white;
+
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    .product:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    }
+    .product img{
+        max-width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+    .product_ico{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        margin: 10px;
+    }
+    .product_text{
+        color: black;
+        text-align: center;
+    }
+    .new{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 8px;
+        border-radius: 0 0 0 8px;
+        background: red;
+        color: white;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <!-- ограничение ширины "HEADER" -->
+            <div class="container">
+                <div class="header_body">
+                    <!-- ЛОГОТИП -->
+                    <a class="header_logo" href="index.html">
+                        <img src="img/logo.jpg" alt="здесь был логотип :(">
+                    </a>
+                    <!-- БУРГЕР -->
+                    <div class="header_burger">
+                        <span></span>
+                    </div>
+                    <nav class="header_menu">
+                        <ul class="header_list">
+                            <li>
+                                <a href="index.html" class="header_link">Главная</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Технологии</a>
+                            </li>
+                            <li>
+                                <a href="" class="header_link">Новости</a>
+                            </li>
+                            <li>
+                                <a href="products.html" class="header_link" style="color:var(--color);">Продукция</a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="header_link">Услуги</a>
+                            </li>
+                            <li>
+                                <a href="contacts.html" class="header_link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="cluster">
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/1.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Информационные терминалы</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/2.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Снековые аппараты</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/3.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Платёжные терминалы</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/4.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Электрошкаф</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/5.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Билетные терминалы</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/6.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Банковское оборудование</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="product_ico">
+                    <img src="img/products/7.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Мебельная фурнитура</h4>
+                </div>
+            </a>
+
+            <a href="#" class="product">
+                <div class="new">New</div>
+                <div class="product_ico">
+                    <img src="img/products/8.jpg" alt="Нет картинки? печаль ;(">
+                </div>
+                <div class="product_text">
+                    <h4>Ваши чертежи</h4>
+                </div>
+            </a>
+
+
+        </div>
+
+        <!-- КОНТАКТЫ -->
+        <div class="basement">
+
+            <div class="contacts">
+                <h3>Контакты:</h3>
+                <!-- НОМЕРА ТЕЛЕФОНОВ -->
+                <div class=phone><a href="tel:+74964525908">Тел1: +7(496)452-59-08</a></div>
+                <div class=phone><a href="tel:+74964523838">Тел2: +7(496)452-38-38</a></div>
+                <div class=phone><a href="tel:+74964524588">Факс: +7(495)123-45-67</a></div>
+            </div>
+
+            <div class="contacts">
+                <h3>Контакты:</h3>
+                <!-- НОМЕРА ТЕЛЕФОНОВ -->
+                <div class=phone><a href="tel:+74964525908">Тел1: +7(496)452-59-08</a></div>
+                <div class=phone><a href="tel:+74964523838">Тел2: +7(496)452-38-38</a></div>
+                <div class=phone><a href="tel:+74964524588">Факс: +7(495)123-45-67</a></div>
+            </div>
+
+            <div class="contacts">
+                <h3>Контакты:</h3>
+                <!-- НОМЕРА ТЕЛЕФОНОВ -->
+                <div class=phone><a href="tel:+74964525908">Тел1: +7(496)452-59-08</a></div>
+                <div class=phone><a href="tel:+74964523838">Тел2: +7(496)452-38-38</a></div>
+                <div class=phone><a href="tel:+74964524588">Факс: +7(495)123-45-67</a></div>
+            </div>
+
+            <!-- <div class="copy"><a href='https://nris.ru/blog/chto-oznachaet-znak-kopirajta/'>&#169;</a> 2021 Официальный сайт компании «НИЦ ТЛ ЛТД»</div> -->
+        </div>
+    </div>
+
+
+    <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
+    <script>
+        $(document).ready(function() {
+            $('.header_burger').click(function(event) {
+                $('.header_burger,.header_menu').toggleClass('active');
+                $('body').toggleClass('lock');
+            });
+        });
+
+        Y = 'teal';
+    </script>
+
+</body>
+</html>

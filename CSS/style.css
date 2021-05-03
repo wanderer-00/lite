@@ -1,3 +1,7 @@
+:root{
+    --color: #00fff2;
+}
+
 /* КО ВСЕМУ ДОКУМЕНТУ */
 *,
 *:before,
@@ -119,7 +123,6 @@ textarea {
     display: none;
 }
 
-.header_menu {}
 
 .header_list {
     display: flex;
@@ -144,15 +147,13 @@ textarea {
 }
 
 .header_link:hover {
-    color: lightseagreen;
-    border: 2px solid lightseagreen;
+    color: var(--color);
+    border: 2px solid var(--color);
 }
 
 .content {
     padding: 100px 0 0 0;
 }
-
-.content_text {}
 
 /* При ширине экрана = 767px: */
 @media (max-width:767px) {
@@ -284,7 +285,7 @@ textarea {
     }
     .request_and_map{
         width: 100% !important;
-        padding: 0 !important;
+        padding: 10px !important;
         grid-template-columns: 1fr !important;
     }
     .request{
@@ -296,6 +297,21 @@ textarea {
     .map{
         width: 100% !important;
     }
+
+
+    .basement {
+        padding: 20px 10px !important;
+    }
+    .basement_line {
+        display: block !important;
+    }
+    .basement_item {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    .basement_item h3 {
+        padding: 0 0 4px 0 !important;
+    }
 }
 
 
@@ -303,8 +319,6 @@ textarea {
     margin: 50px 0 0 0;
     width: 100%;
 }
-
-.box_img img {}
 
 .box_img div {
     position: absolute;
@@ -360,18 +374,18 @@ textarea {
 
 .quality_text font {
     display: block;
-    color: teal;
+    color: var(--color);
     font-size: 26px;
     font-weight: 500;
 }
 
 
 .request_and_map {
-    color: white;
+    color: black;
     font-size: 32px;
     width: 100%;
     padding: 20px;
-    background-color: black;
+    background-color: white;
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
@@ -379,7 +393,6 @@ textarea {
 /* ЗАЯВКА */
 .request {
     padding: 0 20px;
-    background: black;
 }
 
 /* ПОЛЯ ЗАЯВКИ */
@@ -395,11 +408,12 @@ textarea {
 .map_box{
     width: 100%;
 }
-
 .map {
     height: 400px;
     width: 100%;
     margin: 10px 0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
 
@@ -414,26 +428,29 @@ textarea {
 
 
 /* BOTTOM */
-.bottom_header {
-    margin-top: 20px;
+.basement {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
     background-color: black;
     padding: 20px;
 }
-
-.bottom_header h3 {
+.basement_line {
+    display: flex;
+    justify-content: space-between;
+}
+.basement_item h3 {
     padding-bottom: 18px;
 }
-
 .phone {
     padding-bottom: 5px;
 }
-
 .copy,
 .copy a {
     color: darkgray;
     font-size: 10px;
     padding-top: 10px;
 }
+
 
 .button {
     content: 'wwwwwww';
@@ -458,83 +475,3 @@ textarea {
     background: #1ECD97;
 }
 
-
-
-/* color: #1ECD97;
-$gray: #bbbbbb;
-* {
-  font-family: 'Roboto', sans-serif;
-}
-.container {
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin-left: -65px;
-  margin-top: -20px;
-  width: 130px;
-  height: 40px;
-  text-align: center;
-}
-button {
-  outline:none;
-  height: 40px;
-  text-align: center;
-  width: 130px;
-  border-radius:40px;
-  background: #fff;
-  border: 2px solid $green;
-  color:$green;
-  letter-spacing:1px;
-  text-shadow:0;
-  font:{
-    size:12px;
-    weight:bold;
-  }
-  cursor: pointer;
-  transition: all 0.25s ease;
-  &:hover {
-    color:white;
-    background: $green;
-  }
-  &:active {
-    //letter-spacing: 2px;
-    letter-spacing: 2px ;
-  }
-  &:after {
-    content:"SUBMIT";
-  }
-}
-.onclic {
-  width: 40px;
-  border-color:$gray;
-  border-width:3px;
-  font-size:0;
-  border-left-color:$green;
-  animation: rotating 2s 0.25s linear infinite;
-
-  &:after {
-    content:"";
-  }
-  &:hover {
-    color:$green;
-    background: white;
-  }
-}
-.validate {
-  font-size:13px;
-  color: white;
-  background: $green;
-  &:after {
-    font-family:'FontAwesome';
-    content:"\f00c";
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
