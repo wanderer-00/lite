@@ -11,33 +11,22 @@
     border: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    /* border: 1px solid purple; */
+    border: 1px solid purple;
 }
 
 /* К ВИДИМОЙ ЧАСТИ САЙТА - "BODY" */
 html,
 body {
     height: 100%;
-    color: white;
+    color: black;
     background-color: white;
 }
 
 /* scroll bar */
-::-webkit-scrollbar {
-    width: 8px
-}
-
-::-webkit-scrollbar-track {
-    background: #18191d
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3b4146
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #474e54
-}
+::-webkit-scrollbar {width: 14px}
+::-webkit-scrollbar-track {background: #18191d}
+::-webkit-scrollbar-thumb {background: #3b4146}
+::-webkit-scrollbar-thumb:hover {background: #474e54}
 
 a {
     color: white;
@@ -322,11 +311,12 @@ textarea {
     position: relative;
     margin-top: 50px;
     width: 100%;
+    color: white;
 }
 
 .box_img div {
     position: absolute;
-    top: 140px;
+    top: 50px;
     left: 50px;
     max-width: 440px;
     padding: 20px;
@@ -396,7 +386,7 @@ textarea {
 
 /* ЗАЯВКА */
 .request {
-    padding: 0 20px;
+    padding: 0 20px 0 0;
 }
 
 /* ПОЛЯ ЗАЯВКИ */
@@ -435,6 +425,7 @@ textarea {
 .basement {
     background-color: black;
     padding: 20px;
+    color: white;
 }
 .basement_line {
     display: flex;
