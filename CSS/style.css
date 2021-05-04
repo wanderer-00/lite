@@ -1,5 +1,5 @@
 :root{
-    --color: #00fff2;
+    --color: rgb(255, 204, 0) /*#00fff2*/;
 }
 
 /* КО ВСЕМУ ДОКУМЕНТУ */
@@ -11,7 +11,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    /* border: 1px solid purple; */
+    /* border: 1px solid purple; */     /* ВОСПОЛЬЗУЙСЯ, ЕСЛИ ТЫ РАЗРАБОТЧИК, ХОРОШАЯ ФИТЧА... */
 }
 
 /* К ВИДИМОЙ ЧАСТИ САЙТА - "BODY" */
@@ -92,9 +92,9 @@ textarea {
 
 .header_logo {
     flex: 0 0 60px;
+    margin: 0 10px;
     /*            border-radius: 50%;*/
     overflow: hidden;
-    /* z-index */
     position: relative;
     z-index: 3;
 }
@@ -154,6 +154,7 @@ textarea {
 
     .header_logo {
         flex: 0 0 40px;
+        margin: 0 5px;
     }
 
     .header_burger {
@@ -163,6 +164,7 @@ textarea {
         height: 20px;
         position: relative;
         z-index: 3;
+        margin: 0 10px;
     }
 
     .header_burger span {
@@ -462,4 +464,53 @@ textarea {
     color: darkgray;
     font-size: 10px;
     padding-top: 10px;
+}
+
+/* PRODUCTS */
+.cluster{
+    margin-top: 80px;
+    min-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.product{
+    overflow: hidden;
+    position: relative;
+    /* SPACE */
+    margin: 20px;
+    padding: 10px;
+    /* SIZE */
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+.product:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+.product img{
+    max-width: 100%;
+}
+.product_ico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin: 10px;
+}
+.product_text{
+    color: black;
+    text-align: center;
+}
+.new{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    border-radius: 0 0 0 8px;
+    background: red;
+    color: white;
 }
