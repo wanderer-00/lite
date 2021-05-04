@@ -11,7 +11,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 /* К ВИДИМОЙ ЧАСТИ САЙТА - "BODY" */
@@ -58,11 +58,7 @@ textarea {
     min-height: 100%;
 }
 
-.container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
+
 
 .header {
     position: fixed;
@@ -254,13 +250,19 @@ textarea {
     .header_link:hover {
         border: none;
     }
-    .box_four{
+
+
+    /* КЛЕВЕР */
+    .clover{
         padding: 0 !important;
     }
     .s {
         grid-template-columns: 1fr !important;
         width: 100% !important;
     }
+
+
+    /* 1-ЫЙ СЛАЙД */
     .box_img {
         margin-top: 30px !important;
         width: 100% !important;
@@ -275,6 +277,9 @@ textarea {
         height: 100%;
         border-radius: 0 !important;
     }
+
+
+    /* ЗАЯВКА | КАРТА */
     .request_and_map{
         width: 100% !important;
         padding: 10px !important;
@@ -291,6 +296,7 @@ textarea {
     }
 
 
+    /* ПОДВАЛ */
     .basement {
         padding: 20px 10px !important;
     }
@@ -306,14 +312,13 @@ textarea {
     }
 }
 
-
+/* 1-ЫЙ СЛАЙД */
 .box_img {
     position: relative;
     margin-top: 50px;
     width: 100%;
     color: white;
 }
-
 .box_img div {
     position: absolute;
     top: 50px;
@@ -323,49 +328,40 @@ textarea {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 6px;
 }
-
 .box_img h1 {
     text-transform: uppercase;
 }
 
+
 /* КЛЕВЕР */
-.box_four {
+.clover {
     padding: 40px 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
-
+/* стабилитрон */
 .s {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 }
-
 .quality {
-    /*            border: 2px solid blue;*/
     display: flex;
     margin: 20px;
 }
-
 .quality_ico {
     width: 100px;
     margin-right: 10px;
 }
-
 .quality_ico img {
     width: 100%;
 }
-
 .quality_text {
     color: black;
     width: 100%;
 }
-
 .quality_text font {
     display: block;
     color: var(--color);
@@ -374,6 +370,19 @@ textarea {
 }
 
 
+/* SLIDER SERVICES */
+.services_box{
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+}
+.services_box h2{
+    padding: 0 0 20px 0;
+}
+
+
+/* ЗАЯВКА | КАРТА */
 .request_and_map {
     color: black;
     font-size: 32px;
@@ -383,13 +392,11 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-
-/* ЗАЯВКА */
+/* заявка */
 .request {
     padding: 0 20px 0 0;
 }
-
-/* ПОЛЯ ЗАЯВКИ */
+/* поля заявки */
 .request input,
 textarea {
     display: block;
@@ -397,7 +404,29 @@ textarea {
     padding: 10px;
     border: 2px solid black;
 }
+/* кнопка отправки заявки */
+.button {
+    content: 'wwwwwww';
+    border-radius: 10px;
+    outline: none;
 
+    color: #1ECD97;
+    border: 2px solid #1ECD97 !important;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 600;
+    background: white;
+    width: 200px;
+}
+.button:hover {
+    color: white;
+    background: #1ECD97;
+}
+.button:focus{
+    color: white;
+    content: '&#10004;' !important;
+    background: #1ECD97;
+}
 /* MAP */
 .map_box{
     width: 100%;
@@ -410,15 +439,6 @@ textarea {
     border-radius: 10px;
 }
 
-
-/* О НАС */
-.o_nas {
-    margin: 6x;
-    padding: 10px;
-    border-radius: 8px;
-    background: black;
-    border: 1px solid white;
-}
 
 
 /* BOTTOM */
@@ -442,39 +462,4 @@ textarea {
     color: darkgray;
     font-size: 10px;
     padding-top: 10px;
-}
-
-
-.button {
-    content: 'wwwwwww';
-    border-radius: 10px;
-    outline: none;
-
-    color: #1ECD97;
-    border: 2px solid #1ECD97 !important;
-    font-size: 18px;
-    font-family: sans-serif;
-    font-weight: 600;
-    background: white;
-    width: 200px;
-}
-.button:hover {
-    color: white;
-    background: #1ECD97;
-}
-.button:focus{
-    color: white;
-    content: '&#10004;' !important;
-    background: #1ECD97;
-}
-
-
-/* SLIDER SERVICES */
-.services_box{
-    padding: 20px;
-    text-align: center;
-    background-color: black;
-}
-.services_box h2{
-    padding: 0 0 20px 0;
 }
