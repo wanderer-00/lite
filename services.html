@@ -11,8 +11,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link type="image/png" sizes="96x96" rel="icon" href="favicon.png">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>НИЦ ТЛ ЛТД | Новости</title>
+    <title>Услуги</title>
 
     <!-- ПОДКЛЮЧЕНИЕ JQUERY -->
     <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
@@ -28,9 +30,11 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 2fr;
+            grid-template-areas:
+                "icon text";
             margin: 20px 0;
         }
-        .service_ico{
+        .service_icon{
             width: 400px;
             height: 200px;
             overflow: hidden;
@@ -38,12 +42,24 @@
             border-radius: 18px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
             transition: 0.3s;
+            grid-area: icon;
     }
-        .service_ico:hover{
+        .service_icon:hover{
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
         }
         .service_text{
             padding: 10px 0;
+            grid-area: text;
+        }
+        /**************************/
+        .service_text a{color: #343434;}
+        @media (orientation: portrait){
+            .service{
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "text"
+                "icon";
+            }
         }
     </style>
 </head>
@@ -92,50 +108,50 @@
         <div class="services_cluster">
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/1_0.jpg') 0 0 / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/1_0.jpg') 0 0 / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Лазерная резка металла</h1>
-                    <a href="">Подробнее...</a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/2_0.jpg') 0 0 / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/2_0.jpg') 0 0 / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Гибка листового металла</h1>
-                    <a href=""></a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/3_0.jpg') 0 0 / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/3_0.jpg') 0 0 / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Порошковая покраска</h1>
-                    <a href=""></a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/4_0.jpg') 0 0 / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/4_0.jpg') 0 0 / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Алюминиевая сварка</h1>
-                    <a href=""></a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/5_0.jpg') 0 0 / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/5_0.jpg') 0 0 / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Токарные и фрезеровальные работы</h1>
-                    <a href=""></a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 
             <div class="service">
-                <div class="service_ico" style="background: url('img/services/6_0.jpg') 0 -60px / 100% no-repeat;"></div>
+                <div class="service_icon" style="background: url('img/services/6_0.jpg') 0 -60px / 100% no-repeat;"></div>
                 <div class="service_text">
                     <h1>Шлифовка</h1>
-                    <a href=""></a>
+                    <a href="#">Подробнее...</a>
                 </div>
             </div>
 

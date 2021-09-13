@@ -11,6 +11,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    border: 1px solid purple;
          /* ВОСПОЛЬЗУЙСЯ, ЕСЛИ ТЫ РАЗРАБОТЧИК, ХОРОШАЯ ФИТЧА... */
 }
 
@@ -513,4 +514,9 @@ textarea {
     border-radius: 0 0 0 8px;
     background: red;
     color: white;
+}
+
+@media (orientation: portrait){
+    /* scroll bar */
+    ::-webkit-scrollbar {display: none}
 }
