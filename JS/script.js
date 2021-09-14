@@ -5,6 +5,8 @@ $(document).ready(function() {
     });
 });
 
+//$(document).oncluck() {}
+
 // SLICK SLIDER
 $(document).ready(function() {
     $('.slider').slick({
