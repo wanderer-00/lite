@@ -465,6 +465,13 @@ textarea {
     color: darkgray;
     font-size: 10px;
     padding-top: 10px;
+    display: inline
+}
+
+/* Да, это я */
+#pidor{
+    position: absolute;
+    right: 20px;
 }
 
 /* PRODUCTS */
