@@ -1,0 +1,36 @@
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.posts {
+/*    border: 1px solid red;*/
+}
+
+.posts > .post {
+    display: flex;
+    padding: 10px;
+}
+
+.posts > .post > .poster {
+    display: flex;
+    height: 160px;
+    width: 360px;
+    margin: 0 40px 0 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.6);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.posts > .post > div > .head {
+    font-size: 2em;
+    padding: 0 0 20px 0;
+}
+
+.posts > .post > div > .time {
+    font-size: 14px;
+    padding: 0 0 14px 0;
+    color: #888;
+}
