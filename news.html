@@ -16,7 +16,7 @@
     <!-- ПОДКЛЮЧЕНИЕ ОСНОВНЫХ СТИЛЕЙ -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/header.css">
-    
+
     <link rel="stylesheet" href="CSS/news.css">
     <title>Новости</title>
 
@@ -24,15 +24,13 @@
     <script src='http://code.jquery.com/jquery-3.6.0.js'></script>
     <script src='JS/script.js'></script>
 
-    <style>
-        .wrapper div{
-        }
-    </style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <!-- HEADER -->
-        <header class="header">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="wrapper">
             <!-- ограничение ширины "HEADER" -->
             <div class="container">
                 <div class="header_body">
@@ -50,9 +48,6 @@
                                 <a href="index.html" class="header_link">Главная</a>
                             </li>
                             <li>
-                                <a href="tehnology.html" class="header_link">Технологии</a>
-                            </li>
-                            <li>
                                 <a href="news.html" class="header_link" style='color: var(--color);'>Новости</a>
                             </li>
                             <li>
@@ -68,27 +63,28 @@
                     </nav>
                 </div>
             </div>
-        </header>
-
-        
-        <main style="color: #000;padding: 100px 20px">
-            
-            <div class="wrapper">
-                
-                <!-- Блок с постами -->
-                <div class="posts"></div>
-                
-            </div>
-            
-        </main>
+        </div>
+    </header>
 
 
-    </div>
+    <main style="color: #000;padding: 100px 20px">
+
+        <div class="wrapper">
+
+            <!-- Блок с постами -->
+            <div class="posts"></div>
+
+        </div>
+
+    </main>
+
+
+
 
 
     <!-- ПОДВАЛ -->
     <footer class="basement">
-
+        <div class="wrapper">
         <div class="basement_line">
             <div class="basement_item">
                 <h3>Контакты:</h3>
@@ -107,11 +103,11 @@
         </div>
 
         <div class="copy"><a href='https://nris.ru/blog/chto-oznachaet-znak-kopirajta/'>&#169;</a> 2021 Официальный сайт компании «НИЦ ТЛ ЛТД»</div>
-
+        </div>
     </footer>
 </body>
 
-    <!-- Данные --><script type="text/javascript" src="DATA/news.js"></script>
-    <!-- Скрипт --><script type="text/javascript" src="JS/news.js"></script>
-
-</html>
+<!-- Данные -->
+<script type="text/javascript" src="DATA/news.js"></script>
+<!-- Скрипт -->
+<script type="text/javascript" src="JS/news.js"></script></html>
